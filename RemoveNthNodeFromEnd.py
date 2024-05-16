@@ -9,13 +9,13 @@ from SinglyLinkedList import *
 def removeNthFromEnd(head, n):
     counter = 1
     dummy = ListNode(0, head)
-    first, second = dummy.next, dummy.next
+    first, second = dummy, dummy
     while counter <= n:
         second = second.next
         counter += 1
     if second is None:
-        print("I'm here")
-        head.val = head.next.val        # Rewrites the head val and
+        # print("I'm here")
+        head.val = head.next.val        # Rewrites the head val (unless head.next is None) and
         head.next = head.next.next      # Make it point to the second val from it
         return 
     while second.next is not None:      # We stop with the second pointer pointing to null and the first one right before the Nth node from the end
