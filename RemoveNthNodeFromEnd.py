@@ -9,7 +9,7 @@ from SinglyLinkedList import *
 def removeNthFromEnd(head, n):
     counter = 1
     dummy = ListNode(0, head)
-    first, second = dummy, dummy
+    first, second = dummy.next, dummy.next
     while counter <= n:
         second = second.next
         counter += 1
@@ -43,7 +43,7 @@ def removeNthFromEnd(head, n):
     return dummy.next
 """
 
-heady = [1,2,3,4,5]
+heady = [1, 2, 3, 4, 5]
 n = 5
 linklist = LinkedList()
 
