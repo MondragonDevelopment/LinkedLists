@@ -1,3 +1,9 @@
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.prev = None
+        self.next = None
+
 class DoublyLinkedList:
     def __init__(self):
         self.head = None
@@ -14,10 +20,9 @@ class DoublyLinkedList:
     # O(1) time | O(1) space
     def setTail(self,node):
         if self.tail is None:
-            self.head = node
-            self.tail = node
+            self.setHead(node)
             return
-        self.insertAfter(self.head, node)
+        self.insertAfter(self.tail, node)
 
     # O(1) time | O(1) space
     def insertBefore(self, node, nodeToInsert):
@@ -82,10 +87,10 @@ class DoublyLinkedList:
         node = self.head
         while node is not None and node.value != value:
             node = node.next
-            return node is not None
+        return node is not None
 
     def removeNodeBindings(self, node):
-        if node.pre is not None:
+        if node.prev is not None:
             node.prev.next = node.next
         if node.next is not None:
             node.next.prev = node.prev

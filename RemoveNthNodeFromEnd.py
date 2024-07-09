@@ -43,8 +43,8 @@ def removeNthFromEnd(head, n):
     return dummy.next
 """
 
-heady = [1, 2, 3, 4, 5]
-n = 5
+heady = [1]
+n = 1
 linklist = LinkedList()
 
 for node in heady:
